@@ -11,8 +11,7 @@ public class ProjectTest {
 
     @Test
     public void testOneIfOne() {
-        Dependency dependency = new Dependency();
-        Project project = new Project(dependency);
+        Project project = new Project();
         ArrayList<String> empty = new ArrayList<String>();
         empty.add("1");
         assertEquals(empty, project.FizzBuzz(1));
@@ -20,8 +19,7 @@ public class ProjectTest {
 
     @Test
     public void testFirstTwo() {
-        Dependency dependency = new Dependency();
-        Project project = new Project(dependency);
+        Project project = new Project();
         ArrayList<String> firstTwo = new ArrayList<String>();
         firstTwo.add("1");
         firstTwo.add("2");
@@ -29,29 +27,29 @@ public class ProjectTest {
     }
 
     @Test
-    public void testAssertion() {
-        Dependency dependency = new Dependency();
-        Project project = new Project(dependency);
-
-        assertEquals(1, project.testFunction());
+    public void testFizz() {
+        Project project = new Project();
+        ArrayList<String> firstTwo = new ArrayList<String>();
+        assertEquals(firstTwo, project.FizzBuzz(2));
     }
 
     @Test
-    public void testMock() {
-        Dependency mockDependency = mock(Dependency.class);
-        Project project = new Project(mockDependency);
-
-        project.testFunction();
-
-        verify(mockDependency).mockFunction();
+    public void testBuzz() {
+        Project project = new Project();
+        ArrayList<String> firstTwo = new ArrayList<String>();
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("Fizz");
+        firstTwo.add("4");
+        firstTwo.add("Buzz");
+        assertEquals(firstTwo, project.FizzBuzz(2));
     }
 
     @Test
-    public void testStub() {
-        Dependency mockDependency = mock(Dependency.class);
-        Project project = new Project(mockDependency);
-        when(mockDependency.stubFunction()).thenReturn(15);
-
-        assertEquals(15, project.testFunction());
+    public void testArrayLenght() {
+        Project project = new Project();
+        int lenght = 5;
+        assertEquals(lenght, project.FizzBuzz(lenght).size());
+    
     }
 }
