@@ -29,27 +29,46 @@ public class ProjectTest {
     @Test
     public void testFizz() {
         Project project = new Project();
-        ArrayList<String> firstTwo = new ArrayList<String>();
-        assertEquals(firstTwo, project.FizzBuzz(2));
+        int index = 3;
+        String result = project.FizzBuzz(index).get(index-1);
+        assertEquals(result, "Fizz");
     }
 
     @Test
     public void testBuzz() {
         Project project = new Project();
-        ArrayList<String> firstTwo = new ArrayList<String>();
-        firstTwo.add("1");
-        firstTwo.add("2");
-        firstTwo.add("Fizz");
-        firstTwo.add("4");
-        firstTwo.add("Buzz");
-        assertEquals(firstTwo, project.FizzBuzz(2));
+        int index = 5;
+        String result = project.FizzBuzz(index).get(index-1);
+        assertEquals(result, "Buzz");
     }
 
     @Test
-    public void testArrayLenght() {
+    public void testFizzBuzz() {
         Project project = new Project();
-        int lenght = 5;
-        assertEquals(lenght, project.FizzBuzz(lenght).size());
-    
+        int index = 15;
+        String result = project.FizzBuzz(index).get(index-1);
+        assertEquals(result, "FizzBuzz");
+    }
+
+    @Test
+    public void testFirstTwo() {
+        Project project = new Project();
+        ArrayList<String> firstTwo = new ArrayList<String>();
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("1");
+        firstTwo.add("2");
+        firstTwo.add("1");
+        firstTwo.add("2");
+        
+        assertEquals(firstTwo, project.FizzBuzz(2));
     }
 }
