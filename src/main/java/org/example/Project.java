@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Project {
 
     private final Dependency dependency;
@@ -11,5 +13,13 @@ public class Project {
     public int testFunction(){
         dependency.mockFunction();
         return dependency.stubFunction();
+    }
+
+    public ArrayList<String> FizzBuzz(int number){
+        ArrayList<String> FizzBuzz = new ArrayList<String>();
+        for (int i = 1; i <= number; ++i) {
+            FizzBuzz.add(String.valueOf(i));
+        }
+        return FizzBuzz;
     }
 }
